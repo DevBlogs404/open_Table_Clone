@@ -1,0 +1,89 @@
+<main className="w-screen min-h-screen bg-gray-100">
+    <main className="max-w-screen-2xl m-auto bg-white">
+      {/* Navbar  */}
+      <nav className="flex justify-between p-2">
+        <Link href="/" className="text-2xl text-gray-700 font-semibold">
+          {" "}
+          OpenTable{" "}
+        </Link>
+        <div>
+          <div>
+            <button className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4">
+              Sign Up
+            </button>
+            <button className="border px-3 p-2 rounded-sm  text-black">
+              Log In
+            </button>
+          </div>
+        </div>
+      </nav>
+      {/* Navbar  */}
+
+      <div className="border-t h-screen">
+        <div className="py-9 w-3/5 m-auto">
+          {/* header */}
+          <div>
+            <h3 className="font-bold">You're Almost done!!</h3>
+            <div className="mt-5 flex">
+              <img src="" alt="" className="rounded w-32 h-18" />
+              <div className="ml-4">
+                <h1 className="text-3xl  font-bold">
+                  Aiana Restaurent collection
+                </h1>
+                <div className="mt-3 flex">
+                  <p className="mr-6">Tue 23,2023</p>
+                  <p className="mr-6">7:30 pm</p>
+                  <p className="mr-6">3 people</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* header */}
+
+          {/* form */}
+          <div className="flex flex-wrap justify-between mt-10 w-[660px]">
+            <input
+              type="text"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="First name"
+            />
+            <input
+              type="text"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="Last name"
+            />
+            <input
+              type="email"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="Email "
+            />
+            <input
+              type="text"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="Phone Number"
+            />
+            <input
+              type="text"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="Occasion (optional)"
+            />
+            <input
+              type="text"
+              className="border rounded p-3 w-80 mb-4"
+              placeholder="Requests (optional)"
+            />
+            <button className="bg-red-600 w-full p-3  text-white font-bold rounded disabled:bg-gray-300">
+              Complete Reservation
+            </button>
+            <p className="text-sm mt-4">
+              By clicking "complete reservation" you agree to OpenTable Terms
+              of Use and privacy. Standard text message may apply.You may opt
+              out of recieving messages any time.
+            </p>
+          </div>
+          {/* form */}
+        </div>
+      </div>
+    </main>
+  </main>
