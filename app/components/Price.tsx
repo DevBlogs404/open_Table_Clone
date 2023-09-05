@@ -2,13 +2,13 @@ import { PRICE } from "@prisma/client";
 
 export default function Price({ price }: { price: PRICE }) {
   const renderPrice = () => {
-    if ((price = PRICE.CHEAP)) {
+    if (price === PRICE.CHEAP) {
       return (
         <>
           <span>$$</span> <span className="text-gray-300">$$</span>
         </>
       );
-    } else if ((price = PRICE.REGULAR)) {
+    } else if (price === PRICE.REGULAR) {
       return (
         <>
           <span>$$$</span> <span className="text-gray-300">$</span>
