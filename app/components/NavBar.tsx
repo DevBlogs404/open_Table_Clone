@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuthModal from "./AuthModal";
 
 export default function NavBar() {
   return (
@@ -8,13 +9,15 @@ export default function NavBar() {
         OpenTable{" "}
       </Link>
       <div>
-        <div>
-          <button className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4">
+        <div className="flex gap-4">
+          {/* <button className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4">
             Sign Up
-          </button>
-          <button className="border px-3 p-2 rounded-sm  text-black">
+          </button> */}
+          <AuthModal isSignIn={true} />
+          <AuthModal isSignIn={false} />
+          {/* <button className="border px-3 p-2 rounded-sm  text-black">
             Log In
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>
