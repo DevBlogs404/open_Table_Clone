@@ -32,5 +32,7 @@ export default function Star({
     });
   };
 
-  return <div className="flex items-center">{renderStars()}</div>;
+  const renderStar = renderStars();
+
+  return <div className="flex items-center">{renderStar}</div>;
 }
