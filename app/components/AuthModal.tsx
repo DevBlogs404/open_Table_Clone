@@ -37,7 +37,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
   };
 
   const renderButton = (signInContent: string, LogInContent: string) => {
-    return isSignIn ? signInContent : LogInContent;
+    return isSignIn ? LogInContent : signInContent;
   };
 
   return (
@@ -74,7 +74,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
               <AuthModalInputs
                 inputs={inputs}
                 handleInputChange={handleInputChange}
-                isSignIn={true}
+                isSignIn={isSignIn}
               />
               <button className="uppercase bg-red-600 w-full text-sm rounded mb-5 p-3 text-white disabled:bg-gray-400">
                 {renderButton("Create Account", "Log In")}

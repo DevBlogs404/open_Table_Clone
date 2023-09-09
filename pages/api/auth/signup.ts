@@ -8,6 +8,8 @@ const prisma = new PrismaClient()
 
 export default async function handler(req:NextApiRequest,res:NextApiResponse) {
 
+    if(req.method === "POST"){
+
     const {firstName,lastName,email,phone,city,password} = req.body
 
     const showError:string[]  = [];
@@ -51,7 +53,7 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
 
     const getUserWithEmail = await prisma.user.findUnique({
         where:{
-            email
+            email:email
         }
     })
 
@@ -78,12 +80,14 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
 
     const token = await new jose.SignJWT({email:user.email}).setProtectedHeader({alg}).setExpirationTime("24h").sign(secret)
 
-       if(req.method === "POST"){
-        res.status(200).json({
+   
+         return  res.status(200).json({
             success:true,
             message:"User SignUp Successful",
-            user,
             token
         })
-       }
+
+    }
+
+    return res.status(404).json({errorMessage:"Unknown end-point"})
 }

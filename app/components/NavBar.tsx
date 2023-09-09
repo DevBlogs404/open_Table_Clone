@@ -13,8 +13,8 @@ export default function NavBar() {
           {/* <button className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4">
             Sign Up
           </button> */}
-          <AuthModal isSignIn={true} />
           <AuthModal isSignIn={false} />
+          <AuthModal isSignIn={true} />
           {/* <button className="border px-3 p-2 rounded-sm  text-black">
             Log In
           </button> */}
