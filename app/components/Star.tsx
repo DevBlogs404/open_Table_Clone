@@ -1,3 +1,5 @@
+"use client";
+
 import FullStar from "../../public/full-star.png";
 import HalfStar from "../../public/half-star.png";
 import EmptyStar from "../../public/empty-star.png";
@@ -28,11 +30,11 @@ export default function Star({
     }
 
     return stars.map((star) => {
-      return <Image src={star} alt="" className="w-4 h-4 mr-1" />;
+      return (
+        <Image src={star} alt="" key={Math.random()} className="w-4 h-4 mr-1" />
+      );
     });
   };
 
-  const renderStar = renderStars();
-
-  return <div className="flex items-center">{renderStar}</div>;
+  return <div className="flex items-center">{renderStars()}</div>;
 }

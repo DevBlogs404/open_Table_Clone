@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import AuthModalInputs from "./AuthModalInputs";
 import useAuth from "@/hooks/useAuth";
+import { AuthenticationContext } from "../context/AuthContext";
+import { Alert, CircularProgress } from "@mui/material";
 
 const style = {
   position: "absolute" as "absolute",
@@ -22,7 +24,8 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [disabled, setDisabled] = useState(true);
-  const { logIn } = useAuth();
+  const { logIn, signUp } = useAuth();
+  const { loading, data, error } = useContext(AuthenticationContext);
 
   const [inputs, setInputs] = useState({
     firstName: "",
@@ -67,7 +70,19 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
 
   const handleClick = () => {
     if (isSignIn) {
-      logIn({ email: inputs.email, password: inputs.password });
+      logIn({ email: inputs.email, password: inputs.password }, handleClose);
+    } else {
+      signUp(
+        {
+          firstName: inputs.firstName,
+          lastName: inputs.lastName,
+          email: inputs.email,
+          city: inputs.city,
+          phone: inputs.phone,
+          password: inputs.password,
+        },
+        handleClose
+      );
     }
   };
 
@@ -89,33 +104,47 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className="p-2 h-[500px]">
-            <div className="uppercase pb-2 font-bold text-center border-b mb-2">
-              <p className="text-sm">
-                {renderButton("Create New Account", "Log In")}
-              </p>
+          {loading ? (
+            <div className=" py-24 px-2 h-[600px] flex justify-center">
+              <CircularProgress />
             </div>
-            <div className="m-auto">
-              <h2 className="font-light text-center text-xl">
-                {renderButton(
-                  "Create Your OpenTable Account",
-                  "Log Into Your Account"
-                )}
-              </h2>
-              <AuthModalInputs
-                inputs={inputs}
-                handleInputChange={handleInputChange}
-                isSignIn={isSignIn}
-              />
-              <button
-                className="uppercase bg-red-600 w-full text-sm rounded mb-5 p-3 text-white disabled:bg-gray-400"
-                disabled={disabled}
-                onClick={handleClick}
-              >
-                {renderButton("Create Account", "Log In")}
-              </button>
+          ) : (
+            <div className="p-2 h-[500px]">
+              {error ? (
+                <Alert className="mb-4" severity="error">
+                  {error}
+                </Alert>
+              ) : null}
+              <div className="uppercase pb-2 font-bold text-center border-b mb-2">
+                <p className="text-sm">
+                  {renderButton("Create New Account", "Log In")}
+                </p>
+                <p>
+                  {data?.firstName} {data?.lastName}
+                </p>
+              </div>
+              <div className="m-auto">
+                <h2 className="font-light text-center text-xl">
+                  {renderButton(
+                    "Create Your OpenTable Account",
+                    "Log Into Your Account"
+                  )}
+                </h2>
+                <AuthModalInputs
+                  inputs={inputs}
+                  handleInputChange={handleInputChange}
+                  isSignIn={isSignIn}
+                />
+                <button
+                  className="uppercase bg-red-600 w-full text-sm rounded mb-5 p-3 text-white disabled:bg-gray-400"
+                  disabled={disabled}
+                  onClick={handleClick}
+                >
+                  {renderButton("Create Account", "Log In")}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </Box>
       </Modal>
     </div>

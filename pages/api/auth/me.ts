@@ -31,9 +31,33 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse){
 
         }
     })
+
+    if(!user){
+        return res.status(400).json({
+            errorMessage:"User not found"
+        })
+    }
     
-    return res.status(200).json({success:true,
-        message:"User Login Successful",
-        user
+    return res.status(200).json({
+            id : user.id,
+            firstName : user.first_name,
+            lastName:user.last_name,
+            email:user.email,
+            city:user.city,
+            phone:user.phone
+        
     })
 }
+
+
+// res.status(200).json({success:true,
+//     message:"User Login Successful",
+//     user : {
+//         id : user.id,
+//         firstName : user.first_name,
+//         lastName:user.last_name,
+//         email:user.email,
+//         city:user.city,
+//         phone:user.phone
+//     }
+// })
