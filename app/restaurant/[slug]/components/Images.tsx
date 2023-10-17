@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Images({ images }: { images: string[] }) {
@@ -11,6 +13,7 @@ export default function Images({ images }: { images: string[] }) {
         {images.map((image) => {
           return (
             <Image
+              key={image}
               src={image}
               alt="random"
               width={150}

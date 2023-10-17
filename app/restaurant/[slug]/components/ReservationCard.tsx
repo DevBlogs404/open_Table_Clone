@@ -19,6 +19,26 @@ export default function ReservationCard({
     return setSelectedDate(null);
   };
 
+  const filterTimeByRestaurantOpenWindow = () => {
+    let timesInWindow: typeof times = [];
+
+    let isWithinWindow = false;
+
+    times.forEach((time) => {
+      if (time.time === openTime) {
+        isWithinWindow = true;
+      }
+      if (isWithinWindow) {
+        timesInWindow.push(time);
+      }
+      if (time.time === closeTime) {
+        isWithinWindow = false;
+      }
+    });
+
+    return timesInWindow;
+  };
+
   return (
     <div className="fixed w-[15%] bg-white rounded p-3 shadow">
       <div className="border-b pb-2 font-bold text-center">
@@ -49,7 +69,7 @@ export default function ReservationCard({
         <div className="flex flex-col w-[48%]">
           <label htmlFor="date">Time</label>
           <select name="" id="" className="py-3 border-b font-light">
-            {times.map((time) => (
+            {filterTimeByRestaurantOpenWindow().map((time) => (
               <option key={time.time} value={time.time}>
                 {time.displayTime}
               </option>

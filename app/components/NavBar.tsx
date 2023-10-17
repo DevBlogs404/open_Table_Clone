@@ -9,6 +9,7 @@ import useAuth from "@/hooks/useAuth";
 export default function NavBar() {
   const { loading, data } = useContext(AuthenticationContext);
   const { LogOut } = useAuth();
+
   return (
     <nav className="flex justify-between p-2">
       <Link href="/" className="text-2xl text-gray-700 font-semibold">

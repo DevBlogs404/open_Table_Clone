@@ -34,11 +34,11 @@ const useAuth = () => {
         error: null,
       });
       handleClose();
-    } catch (err: any) {
+    } catch (error: any) {
       setAuthState({
         loading: false,
         data: null,
-        error: err.response.data.errorMessage,
+        error: error.response.data.errorMessage || "error logging in",
       });
     }
   };
