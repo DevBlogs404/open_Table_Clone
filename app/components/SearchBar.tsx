@@ -24,7 +24,7 @@ export default function SearchBar() {
           setLocation("");
         }}
       >
-        Let's Go
+        Let&apos;s Go
       </button>
     </div>
   );

@@ -35,9 +35,9 @@ export default function Form() {
         Complete Reservation
       </button>
       <p className="text-sm mt-4">
-        By clicking "complete reservation" you agree to OpenTable Terms of Use
-        and privacy. Standard text message may apply.You may opt out of
-        recieving messages any time.
+        By clicking &quot;complete reservation&quot; you agree to OpenTable
+        Terms of Use and privacy. Standard text message may apply.You may opt
+        out of recieving messages any time.
       </p>
     </div>
   );

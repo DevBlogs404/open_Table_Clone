@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function Header() {
   return (
     <div>
-      <h3 className="font-bold">You're Almost done!!</h3>
+      <h3 className="font-bold">You&apos;re Almost done!!</h3>
       <div className="mt-5 flex">
-        <img src="" alt="" className="rounded w-32 h-18" />
+        <Image src="" alt="" className="rounded w-32 h-18" />
         <div className="ml-4">
           <h1 className="text-3xl  font-bold">Aiana Restaurent collection</h1>
           <div className="mt-3 flex">

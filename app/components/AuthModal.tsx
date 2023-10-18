@@ -55,7 +55,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     }
 
     setDisabled(true);
-  }, [inputs]);
+  }, [inputs, isSignIn]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs({
