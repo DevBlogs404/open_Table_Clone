@@ -20,12 +20,21 @@ export default function NavBar() {
         <div>
           <div className="flex gap-4">
             {data ? (
-              <button
-                className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4"
-                onClick={LogOut}
-              >
-                Log-Out
-              </button>
+              <>
+                <div className="w-[3rem] h-[3rem] flex items-center justify-center bg-blue-300 rounded-full">
+                  <h1 className=" text-xl text-white capitalize font-bold">
+                    {data.firstName[0]}
+                    {data.lastName[0]}
+                  </h1>
+                </div>
+
+                <button
+                  className="border px-3 p-2 rounded-sm bg-blue-400 text-white mr-4"
+                  onClick={LogOut}
+                >
+                  Log-Out
+                </button>
+              </>
             ) : (
               <>
                 <AuthModal isSignIn={false} />
