@@ -58,7 +58,6 @@ export default function SearchSidebar({
                   cuisine: cuisine.name,
                 },
               }}
-              key={cuisine.id}
             >
               {cuisine.name}
             </Link>
