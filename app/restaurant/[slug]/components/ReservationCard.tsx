@@ -130,13 +130,17 @@ export default function ReservationCard({
                 <Link
                   href={`/reserve/${slug}?date=${day}T${d.time}&partySize=${partySize}`}
                   className="p-2 w-24 bg-red-600 rounded text-center text-white cursor-pointer mb-3 mr-3"
+                  key={d.time}
                 >
                   <p className="text-sm font-bold">
                     {convertToDisplayTime(d.time)}
                   </p>
                 </Link>
               ) : (
-                <p className="bg-gray-300 w-24 p-2 rounded mb-3 mr-3"></p>
+                <p
+                  className="bg-gray-300 w-24 p-2 rounded mb-3 mr-3"
+                  key={d.time}
+                ></p>
               );
             })}
           </div>

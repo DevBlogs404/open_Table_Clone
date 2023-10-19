@@ -51,6 +51,6 @@ const displayTimeObject = {
 
 export type Times = keyof typeof displayTimeObject;
 
-export const convertToDisplayTime = (t: Times) => {
-  return displayTimeObject[t];
+export const convertToDisplayTime = (time: Times) => {
+  return displayTimeObject[time];
 };

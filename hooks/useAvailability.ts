@@ -1,8 +1,9 @@
+import { Times } from "@/utils/convertToDisplayTime";
 import axios from "axios";
 import { useState } from "react";
 
 type Availabilities = {
-  time: string;
+  time: Times;
   available: boolean;
 };
 

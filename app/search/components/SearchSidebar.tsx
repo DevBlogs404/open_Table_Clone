@@ -77,7 +77,7 @@ export default function SearchSidebar({
                     price: price,
                   },
                 }}
-                key={price}
+                key={label}
                 className="border text-center rounded-l p-2 w-full text-md font-light"
               >
                 {label}
