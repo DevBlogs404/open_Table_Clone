@@ -23,14 +23,6 @@ export default function useAvailability() {
     time: string;
     partySize: string;
   }) => {
-    // console.log({
-    //   slug,
-    //   day,
-    //   time,
-    //   partySize,
-    // });
-    // return;
-
     setLoading(true);
     try {
       const response = await axios.get(

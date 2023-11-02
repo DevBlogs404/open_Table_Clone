@@ -18,8 +18,6 @@ export default function ReservationCard({
 }) {
   const { loading, error, data, fetchAvailability } = useAvailability();
 
-  // console.log(data);
-
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [time, setTime] = useState(openTime);
   const [partySize, setPartySize] = useState("2");
@@ -63,7 +61,7 @@ export default function ReservationCard({
   };
 
   return (
-    <div className="fixed w-[15%] bg-white rounded p-3 shadow">
+    <div className="fixed w-[18%] bg-white rounded p-3 shadow">
       <div className="border-b pb-2 font-bold text-center">
         <h4 className="mr-7 text-lg">Make a Reservation</h4>
       </div>
@@ -128,7 +126,7 @@ export default function ReservationCard({
             {data.map((d) => {
               return d.available ? (
                 <Link
-                  href={`/reserve/${slug}?date=${day}T${d.time}&partySize=${partySize}`}
+                  href={`/reservation/${slug}?date=${day}T${d.time}&partySize=${partySize}`}
                   className="p-2 w-24 bg-red-600 rounded text-center text-white cursor-pointer mb-3 mr-3"
                   key={d.time}
                 >

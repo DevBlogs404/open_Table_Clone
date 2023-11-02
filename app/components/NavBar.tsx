@@ -22,7 +22,7 @@ export default function NavBar() {
             {data ? (
               <>
                 <div className="w-[3rem] h-[3rem] flex items-center justify-center bg-blue-300 rounded-full">
-                  <h1 className=" text-xl text-white capitalize font-bold">
+                  <h1 className=" text-xl text-white capitalize font-bold cursor-pointer">
                     {data.firstName[0]}
                     {data.lastName[0]}
                   </h1>
