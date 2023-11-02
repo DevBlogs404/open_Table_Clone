@@ -26,7 +26,7 @@ export default function useAvailability() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/restaurant/${slug}/availability?day=${day}&time=${time}&partySize=${partySize}`
+        `https://open-table-clone-tp1t.vercel.app/api/restaurant/${slug}/availability?day=${day}&time=${time}&partySize=${partySize}`
       );
       setData(response.data);
       setLoading(false);

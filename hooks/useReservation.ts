@@ -34,7 +34,7 @@ export default function useReservation() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/restaurant/${slug}/reserve`,
+        `https://open-table-clone-tp1t.vercel.app/api/restaurant/${slug}/reserve`,
         {
           bookerFirstName,
           bookerLastName,

@@ -21,7 +21,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        "https://open-table-clone-tp1t.vercel.app/api/auth/login",
         {
           email,
           password,
@@ -68,7 +68,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/signup",
+        "https://open-table-clone-tp1t.vercel.app/api/auth/signup",
         {
           firstName,
           lastName,
