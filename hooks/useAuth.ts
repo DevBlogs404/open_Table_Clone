@@ -89,7 +89,7 @@ const useAuth = () => {
       setAuthState({
         loading: false,
         data: null,
-        error: err.response.data.errorMessage,
+        error: err.response.data.errorMessage || "error signing up",
       });
     }
   };

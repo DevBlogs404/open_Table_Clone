@@ -19,7 +19,7 @@ export default function RestaurantCard({ restaurant }: Props) {
           width={150}
           height={150}
         />
-        <div className="p-1">
+        <div className="p-3 h-36 flex flex-col justify-between">
           <h3 className="font-bold text-2xl">{restaurant.name}</h3>
           <div className="flex items-start">
             {/* <div className="flex mb-2"> */}

@@ -32,6 +32,7 @@ export default function useAvailability() {
       setLoading(false);
     } catch (error: any) {
       setLoading(false);
+      error.response.data;
       setError(error.response.data.errorMessage);
     }
   };

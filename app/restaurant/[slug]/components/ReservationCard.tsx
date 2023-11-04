@@ -61,7 +61,7 @@ export default function ReservationCard({
   };
 
   return (
-    <div className="fixed w-[18%] bg-white rounded p-3 shadow">
+    <div className="md:fixed w-full md:w-[18%] bg-white rounded p-3 shadow">
       <div className="border-b pb-2 font-bold text-center">
         <h4 className="mr-7 text-lg">Make a Reservation</h4>
       </div>

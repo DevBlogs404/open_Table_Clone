@@ -8,9 +8,9 @@ export default function SearchBar() {
   const [location, setLocation] = useState("");
 
   return (
-    <div className=" flex justify-center m-auto py-3 text-left">
+    <div className="flex justify-center m-auto py-3 text-left">
       <input
-        className="w-[450px] rounded mr-3 p-2 text-lg"
+        className="w-[200px] rounded mr-3 p-2 text-lg md:w-[450px]"
         type="text"
         id="search"
         value={location}
